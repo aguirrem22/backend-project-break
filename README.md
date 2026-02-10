@@ -255,4 +255,3 @@ Recuerda subir en producción en el paratado de variables de entorno estas tambi
 - MONGO_URI y resto de variables de entorno si fueran necesarias (user, password, PORT,...)
 
 Recuerda tener la IP abierta: Atlas -> network access -> IP Address 0.0.0.0/0 
- 
