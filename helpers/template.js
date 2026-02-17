@@ -1,5 +1,4 @@
-const categories = ['Camisetas', 'Pantalones', 'Zapatos', 'Accesorios'];
-const sizes = ['XS', 'S', 'M', 'L', 'XL'];
+const { Categories: categories, Sizes: sizes } = require('../models/Product');
 
 function renderProductCards(products, isDashboard = false) {
 	if (!products.length) {
@@ -37,7 +36,8 @@ function renderProductForm({
 	action,
 	method = 'POST',
 	title = 'Nuevo producto',
-	buttonLabel = 'Guardar'
+	buttonLabel = 'Guardar',
+	errorMessage = ''
 }) {
 	const selectedCategory = product?.category || 'Camisetas';
 	const selectedSize = product?.size || 'M';
@@ -46,6 +46,7 @@ function renderProductForm({
 	return `
 		<section class="form-wrapper">
 			<h1>${title}</h1>
+			${errorMessage ? `<p class="error-message">${errorMessage}</p>` : ''}
 			<form action="${action}" method="POST" class="stack">
 				${methodOverride}
 				<label>Nombre<input name="name" value="${product?.name || ''}" required /></label>

@@ -1,8 +1,9 @@
 require('dotenv').config();
 
+const cors = require('cors');
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
+
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 
@@ -47,6 +48,4 @@ if (require.main === module) {
 			console.error('Error conectando a la base de datos:', error.message);
 			process.exit(1);
 		});
-}
-
-module.exports = app;
+};

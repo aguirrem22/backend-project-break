@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-async function connectDB() {
-	const mongoUri = process.env.MONGO_URI;
-
-	if (!mongoUri) {
-		throw new Error('Falta la variable de entorno MONGO_URI');
-	}
-
-	await mongoose.connect(mongoUri);
-	console.log('MongoDB conectado correctamente');
-}
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB conectado: ${conn.connection.host}`);
+    return conn;
+  } catch (error) {
+    console.error(`Error al conectar a MongoDB: ${error.message}`);
+    throw error;
+  }
+};
 
 module.exports = connectDB;
