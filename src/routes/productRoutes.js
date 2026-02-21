@@ -15,18 +15,8 @@ router.get("/logout", (req, res) => {
     res.redirect("/products");
 });
 
-router.get("/", (req, res) => {
-    res.redirect("/products");
-});
-
 router.get("/products", productController.showProducts);
 router.get("/products/:id", productController.showProductById);
-
-router.get("/api/products", productController.getProducts);
-router.get("/api/products/:id", productController.getProductById);
-router.post("/api/products", productController.createProduct);
-router.put("/api/products/:id", productController.updateProduct);
-router.delete("/api/products/:id", productController.deleteProduct);
 
 router.get("/dashboard", productController.showProducts);
 router.post("/dashboard", productController.createProduct);
@@ -37,7 +27,7 @@ router.put("/dashboard/:id", productController.updateProduct);
 router.delete("/dashboard/:id/delete", productController.deleteProduct);
 
 router.use((req, res) => {
-    res.status(404).send("No funciona");
+    res.status(404).send(`hola mundo`);
 });
 
 module.exports = router;

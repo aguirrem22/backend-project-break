@@ -34,8 +34,8 @@ function renderProductCards(products, isDashboard = false) {
 }
 
 function renderProductForm(product, action, method = "POST", title = "Nuevo producto", buttonLabel = "Guardar", errorMessage = "") {
-	const selectedCategory = product?.categoria || "Camisetas";
-	const selectedSize = product?.talla || "M";
+  const selectedCategory = product?.category || "Camisetas";
+  const selectedSize = product?.size || "M";
   const methodOverride =
     method !== "POST"
       ? `<input type="hidden" name="_method" value="${method}" />`
@@ -47,9 +47,9 @@ function renderProductForm(product, action, method = "POST", title = "Nuevo prod
 			${errorMessage ? `<p class="error-message">${errorMessage}</p>` : ""}
 			<form action="${action}" method="POST" class="stack">
 				${methodOverride}
-				<label>Nombre<input name="nombre" value="${product?.nombre || ""}" required /></label>
-				<label>Descripción<textarea name="descripcion" required>${product?.descripcion || ""}</textarea></label>
-				<label>Imagen (URL)<input name="imagen" type="url" value="${product?.imagen || ""}" required /></label>
+				<label>Nombre<input name="nombre" value="${product?.name || ""}" required /></label>
+				<label>Descripción<textarea name="descripcion" required>${product?.description || ""}</textarea></label>
+				<label>Imagen (URL)<input name="imagen" type="url" value="${product?.image || ""}" required /></label>
 				<label>Categoría
 					<select name="categoria" required>
 				${categories
@@ -70,7 +70,7 @@ function renderProductForm(product, action, method = "POST", title = "Nuevo prod
               .join("")}
 					</select>
 				</label>
-				<label>Precio<input name="precio" type="number" min="0" step="0.01" value="${product?.precio ?? ""}" required /></label>
+				<label>Precio<input name="precio" type="number" min="0" step="0.01" value="${product?.price || ""}" required /></label>
 				<button type="submit">${buttonLabel}</button>
 			</form>
 		</section>
