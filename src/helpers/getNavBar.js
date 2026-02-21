@@ -1,4 +1,4 @@
-function getNavbar({ isAuthenticated = false, isDashboard = false } = {}) {
+function getNavbar(isDashboard = false) {
 	const publicLinks = `
 		<a href="/products">Productos</a>
 		<a href="/products?category=Camisetas">Camisetas</a>
@@ -7,11 +7,11 @@ function getNavbar({ isAuthenticated = false, isDashboard = false } = {}) {
 		<a href="/products?category=Accesorios">Accesorios</a>
 	`;
 
-	const authLinks = isAuthenticated
+	const authLinks = isDashboard
 		? `
 			<a href="/dashboard">Dashboard</a>
 			${isDashboard ? '<a href="/dashboard/new">Nuevo</a>' : ''}
-			<form action="/logout" method="POST"><button type="submit">Salir</button></form>
+			<a href="/logout">Salir</a>
 		`
 		: '<a href="/login">Login</a>';
 

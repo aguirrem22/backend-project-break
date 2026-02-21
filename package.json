@@ -1,29 +1,31 @@
 {
-  "name": "backend-project-break",
+  "name": "project-break-2",
   "version": "1.0.0",
-  "description": "Tienda de ropa con SSR + API JSON",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "test": "jest --runInBand"
+  "directories": {
+    "test": "test"
   },
+  "scripts": {
+    "test": "jest",
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cloudinary": "^2.9.0",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "jsonwebtoken": "^9.0.2",
-    "method-override": "^3.0.0",
-    "mongoose": "^8.8.0"
+    "cloudinary": "2.9.0",
+    "cors": "2.8.6",
+    "dotenv": "17.2.4",
+    "express": "5.2.1",
+    "express-session": "1.19.0",
+    "method-override": "3.0.0",
+    "mongoose": "9.1.6"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.7",
-    "supertest": "^7.0.0"
+    "jest": "30.2.0",
+    "supertest": "7.2.2"
   }
 }

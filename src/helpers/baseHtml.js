@@ -1,4 +1,4 @@
-function baseHtml({ title, body }) {
+function baseHtml(title, body) {
 	return `
 		<!DOCTYPE html>
 		<html lang="es">

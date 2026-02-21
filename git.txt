@@ -1,0 +1,24 @@
+Para mergear cambios al main (rama -> main):
+git checkout main
+git pull
+git merge (rama)
+
+Resolver conflictos
+
+git add *
+git commit -m "Merge branch (rama) into 'main'"
+git push
+
+git checkout (rama)
+
+
+Para mergear cambios a rama de main (main -> rama):
+git pull
+git merge main
+
+Resolver conflictos
+
+git add *
+git commit -m "Merge branch 'main' into (rama)"
+git push
+
