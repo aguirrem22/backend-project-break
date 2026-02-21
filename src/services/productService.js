@@ -1,9 +1,9 @@
 function mapProductToCard(product) {
 	return {
 		id: product._id,
-		name: product.name,
-		price: product.price,
-		image: product.image
+		nombre: product.nombre,
+		precio: product.precio,
+		imagen: product.imagen
 	};
 }
 
